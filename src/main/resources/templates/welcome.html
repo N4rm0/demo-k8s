@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<h1>Hello Kubernetes World!</h1>
+
+<span>
+<a href="actuator/health">actuator/health</a><span th:text="' returns ' + ${isApplicationUp} + '!'"/>
+</span>
+
+<form action="toggleHealthCheck" method="post">
+    <button type="submit">toggle health check</button>
+</form>
+</html>
