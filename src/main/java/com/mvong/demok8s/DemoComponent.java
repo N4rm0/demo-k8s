@@ -9,12 +9,21 @@ import org.springframework.stereotype.Component;
 public class DemoComponent {
 
     private boolean applicationUp = true;
+    private boolean applicationSlow = false;
 
     public boolean isApplicationUp() {
         return applicationUp;
     }
 
     public void toggleBoolean() {
-        this.applicationUp = !this.applicationUp;
+        this.applicationUp ^= true;
+    }
+
+    public boolean isApplicationSlow() {
+        return applicationSlow;
+    }
+
+    public void toggleSlowApplication() {
+        this.applicationSlow ^= true;
     }
 }

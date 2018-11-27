@@ -16,6 +16,13 @@ public class CustomHealthIndicator implements HealthIndicator {
 
     @Override
     public Health health() {
+        if (demoComponent.isApplicationSlow()){
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                return Health.down().build();
+            }
+        }
         return demoComponent.isApplicationUp() ? Health.up().build(): Health.down().build();
     }
 }

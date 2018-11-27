@@ -1,13 +1,25 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Demo Spring boot kubernetes</title>
+    <link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>
 
+</head>
 <h1>Hello Kubernetes World!</h1>
 
 <span>
-<a href="actuator/health">actuator/health</a><span th:text="' returns ' + ${isApplicationUp} + '!'"/>
+    <a href="actuator/health">actuator/health</a>
+    <span th:text="' returns ' + ${isApplicationUp}"/>
+    <span th:text="${isApplicationSlow} ? 'slowly' : 'is less than a second'"/>
 </span>
 
 <form action="toggleHealthCheck" method="post">
     <button type="submit">toggle health check</button>
 </form>
+
+<form action="toggleSlowApplication" method="post">
+    <button type="submit">toggle slow response</button>
+</form>
+
+<script src="/webjars/jquery/jquery.min.js"></script>
 </html>
