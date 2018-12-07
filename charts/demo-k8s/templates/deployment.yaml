@@ -43,7 +43,7 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: status.podIP
-        - path: "NAMESPACE"
+        - name: "NAMESPACE"
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace
